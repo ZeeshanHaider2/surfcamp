@@ -23,7 +23,7 @@ export default function Home() {
   }
   return (
   <main>
-    <HeroSection imgSrc="/assets/hero-experience.png" headline={heroHeadline} theme="orange"/>
+    <HeroSection imgSrc="/assets/horse.jpeg" headline={heroHeadline} theme="orange"/>
     <InfoBlock data={infoBlockData}/>
     <InfoBlock data={{...infoBlockData, reversed: true}}/>
     <InfoBlock data={{...infoBlockData, reversed: true}}/>
