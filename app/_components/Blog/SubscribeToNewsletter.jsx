@@ -1,25 +1,52 @@
 "use client";
+import { useState } from "react";
 
 const SubscribeToNewsletter = () => {
+    const [email, setEmail] = useState("");
+    const [hasSignedUp, setHasSignedUp] = useState(false);
+
+    const onChange = (e) => {
+        setEmail(e.target.value);
+        
+    }
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if (email.length) {
+            setHasSignedUp(true);
+        } else {
+            
+        }
+        //Give back feedback to the user that they have signed up.
+    }
   return (
     <section className="newsletter">
-    <div className="newsletter__info">
+        {hasSignedUp ? (
+            <h4 className="newsletter_thanks">Thank you for signing up for our newsletter</h4>
+        ) : (
+
+        <>
+            <div className="newsletter__info">
       <h4>subscribe to our newsletter</h4>
       <p className="copy">
         Unlock Exclusive Insights and Stay In the Know – Subscribe to Our
         Newsletter Today to always stay in touch
       </p>
     </div>
-    <form className="newsletter__form">
+    <form className="newsletter__form" onSubmit={onSubmit} >
       <input
         type="text"
         className="newsletter__email input"
         placeholder="Enter your E-mail address"
+        value={email}
+        onChange={onChange}
       />
-      <button className="newsletter__subscribe btn btn--medium btn--turquoise">
+      <button type="submit" className="newsletter__subscribe btn btn--medium btn--turquoise">
         SUBSCRIBE
       </button>
     </form>
+    </>
+        )}
+    
   </section>
   )
 }
