@@ -5,12 +5,13 @@ import InfoBlock from './_components/InfoBlock';
 import { fetchDataFromStrapi, processInfoBlocks } from "@/utils/strapi.utils";
 
 export default async function Home() {
+
   //const response = await axios.get(
    // "http://127.0.0.1:1337/api/infoblocks-landing?populate=deep");
    //console.log(response.data.data.attributes.info_blocks.data);
    const data = await fetchDataFromStrapi("infoblocks-landing?populate=deep");
    const infoBlockData = processInfoBlocks(data);
-   console.log(infoBlockData);
+   //console.log(infoBlockData);
 
    const heroHeadline = (
     <>
@@ -41,3 +42,6 @@ export default async function Home() {
   </main>
   )
 }
+
+
+export   const revalidate = 300;
