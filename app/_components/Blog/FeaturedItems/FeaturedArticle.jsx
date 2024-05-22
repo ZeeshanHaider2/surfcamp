@@ -1,3 +1,4 @@
+import { formatData } from '@/utils/strapi.utils';
 import Link from 'next/link';
 
 const FeaturedArticle = ({article}) => {
@@ -13,10 +14,12 @@ const FeaturedArticle = ({article}) => {
 </div>
 <div className="featured-items__article-text">
     <h5>{article.headline}</h5>
-    <p className='copy-small'>{article.date}</p>
+    <p className='copy-small'>{formatData(article.publishedAt)}</p>
 </div>
      </Link>
   )
 }
 
 export default FeaturedArticle
+
+
