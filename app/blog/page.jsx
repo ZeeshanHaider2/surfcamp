@@ -1,5 +1,6 @@
 import HighlightArticle from "../_components/Blog/HighlightArticle"
 import SubscribeToNewsletter from "../_components/Blog/SubscribeToNewsletter"
+import FeaturedItems from "../_components/Blog/FeaturedItems/FeaturedItems"
 
 const page = () => {
   const HighlightArticleData = {
@@ -12,10 +13,56 @@ const page = () => {
     slug:"takeoff",
     featuredImage:"/assets/hero-experience.png",
   }
+
+  const featuredArticles = [
+    {
+      headline:
+        "surfboard shaping and design behind the scenes of crafting the perfect board",
+      slug: "/blog/whatever",
+      date: "Monday, 05th of June 2023",
+      featuredImage: "/assets/hero-experience.png",
+    },
+    {
+      headline:
+        "surfboard shaping and design behind the scenes of crafting the perfect board",
+      slug: "/blog/whatever",
+      date: "Monday, 05th of June 2023",
+      featuredImage: "/assets/hero-experience.png",
+    },
+    {
+      headline:
+        "surfboard shaping and design behind the scenes of crafting the perfect board",
+      slug: "/blog/whatever",
+      date: "Monday, 05th of June 2023",
+      featuredImage: "/assets/hero-experience.png",
+    },
+    {
+      headline:
+        "surfboard shaping and design behind the scenes of crafting the perfect board",
+      slug: "/blog/whatever",
+      date: "Monday, 05th of June 2023",
+      featuredImage: "/assets/hero-experience.png",
+    },
+    {
+      headline:
+        "surfboard shaping and design behind the scenes of crafting the perfect board",
+      slug: "/blog/whatever",
+      date: "Monday, 05th of June 2023",
+      featuredImage: "/assets/hero-experience.png",
+    },
+    {
+      headline:
+        "surfboard shaping and design behind the scenes of crafting the perfect board",
+      slug: "/blog/whatever",
+      date: "Monday, 05th of June 2023",
+      featuredImage: "/assets/hero-experience.png",
+    },
+  ];
   return (
    <main className="blog-page">
        <HighlightArticle data={HighlightArticleData}/>
        <SubscribeToNewsletter/>
+       <FeaturedItems items= {featuredArticles}/>
    </main>
     
   )
