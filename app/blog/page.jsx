@@ -1,6 +1,6 @@
 import HighlightArticle from "../_components/Blog/HighlightArticle"
 import SubscribeToNewsletter from "../_components/Blog/SubscribeToNewsletter"
-import FeaturedItems from "../_components/Blog/FeaturedItems/FeaturedItems"
+import FeaturedItems from "../_components/FeaturedItems/FeaturedItems"
 import axios from "axios"
 import { fetchBlogArticles,fetchDataFromStrapi } from "@/utils/strapi.utils"
 
@@ -25,3 +25,4 @@ export default async function Page(){
   )
 }
 
+export const revalidate = 300;

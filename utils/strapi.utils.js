@@ -64,7 +64,7 @@ function processBlogArticle(article) {
   };
 }
 
-export function formatData(dateString) {
+export function formatDate(dateString) {
   const date = new Date(dateString);
   const options = {
     year: "numeric",
@@ -72,4 +72,8 @@ export function formatData(dateString) {
     day: "2-digit",
   };
   return date.toLocaleDateString("en-US", options);
+}
+
+export function extractImageUrl(imageData) {
+  return BASE_URL + imageData.data?.attributes?.url;
 }
