@@ -11,7 +11,7 @@ export default async function Page({params}) {
   const article = articles.find((article)=> article.slug === slug);
   
   return(
-    <main>
+    <main className="blog-page">
         <ArticleIntro article={article} />
       <section className="article-section">
          <ArticleOverview article={article} /> 
