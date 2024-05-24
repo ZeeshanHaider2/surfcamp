@@ -2,7 +2,7 @@ import Link from "next/link";
 const ArticleOverview = ({article}) => {
    // console.log(article);
     const headlines = article.articleContent.filter((component) => component.__component==="blog-article.headline-a");
-    console.log(headlines[2]);
+    //console.log(headlines[1]);
   return (
     <div className="article-overview">
         <div className="article-overview__info">

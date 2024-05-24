@@ -3,6 +3,7 @@ import Image from 'next/image';
 import HeroSection from './_components/HeroSection';
 import InfoBlock from './_components/InfoBlock';
 import { fetchDataFromStrapi, processInfoBlocks } from "@/utils/strapi.utils";
+import BlogPreview from "./_components/BlogPreview/BlogPreview";
 
 export default async function Home() {
 
@@ -39,6 +40,8 @@ export default async function Home() {
     )}
     {/*<InfoBlock data={infoBlockData}/>
     <InfoBlock data={{...infoBlockData, reversed: true}}/>*/}
+
+    <BlogPreview/>
   </main>
   )
 }
