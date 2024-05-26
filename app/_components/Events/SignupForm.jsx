@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { allDataFilledIn } from "@/utils/validation.utils";
 
-const SignupForm = ({headline, infoText, buttonLabel}) => {
+const SignupForm = ({headline, infoText, buttonLabel, pricing}) => {
     const [ formData , setFormData] = useState({
     
     firstName: "",
@@ -78,11 +78,18 @@ if (allDataFilledIn(formData)){
               onChange={onChange}
               label ="Your telephone number"
               />
+               {errorMessage && (
+             <p className="copy signup-form__error">{errorMessage}</p>
+             )}
              <button className="btn btn--medium btn--turquoise" type="submit">
                 {buttonLabel || "stay in touch"}
              </button>
-             {errorMessage && (
-             <p className="copy signup-form__error">{errorMessage}</p>
+             {pricing && (
+              <div className="signup-form__pricing">
+                <h3>Pricing</h3>
+                <p className="copy">Single Room: {" "} <span className="bold">{pricing.singlePrice} € per person</span></p>
+                <p className="copy">Shared Room: {" "} <span className="bold">{pricing.sharedPrice} € per person</span></p>
+              </div>
              )}
     </form>
 }

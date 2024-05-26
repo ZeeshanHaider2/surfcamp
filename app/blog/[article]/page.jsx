@@ -30,10 +30,15 @@ export default async function Page({params}) {
 }       
 
 export async function generateStaticParams(){
+  try{
     const articles = await fetchDataFromStrapi("blog-articles");
     return articles.map((article)=>({
         article:article.attributes.slug,
     }))
+
+  }catch(err){
+    console.log("Error fetching slugs for articles",err);
+  }
 }
 
 export const  revalidate = 300;
