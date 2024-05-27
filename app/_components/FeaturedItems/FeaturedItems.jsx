@@ -2,7 +2,7 @@
 import { useState} from 'react';
 import FeaturedArticle from './FeaturedArticle'
 
-const FeaturedItems = ({headline, items}) => {
+const FeaturedItems = ({headline, items, itemType }) => {
   const [itemNumber, setItemNumber] = useState(3);
 
   const onShowMore =()=>{

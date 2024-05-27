@@ -1,6 +1,6 @@
+import qs from "qs";
 import axios from "axios";
 import Link from "next/link";
-import qs from "qs";
 
 const BASE_URL = process.env.STRAPI_URL || "http://127.0.0.1:1337";
 
@@ -88,6 +88,7 @@ export async function fetchIndividualEvent(eventId) {
 function processEventData(event) {
   return {
     ...event.attributes,
+    image: BASE_URL + event.attributes?.image?.data?.attributes?.url,
     id: event.id,
   };
 }
@@ -112,9 +113,19 @@ export function generateSignupPayload(formData, eventId) {
 export async function fetchAllEvents() {
   const query = qs.stringify(
     {
-      filters: {
+      pagination: {
+        start: 0,
+        limit: 12,
+      },
+      // sort: ["startingDate:asc"],
+      filter: {
         startingDate: {
           $gt: new Date(),
+        },
+      },
+      populate: {
+        image: {
+          populate: "*",
         },
       },
     },
@@ -122,5 +133,6 @@ export async function fetchAllEvents() {
   );
 
   const response = await axios.get(`${BASE_URL}/api/events?${query}`);
-  return response.data.data;
+  //console.log(`${BASE_URL}/api/events?${query}`);
+  return response.data.data.map((event) => processEventData(event));
 }
