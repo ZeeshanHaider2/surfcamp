@@ -90,3 +90,20 @@ function processEventData(event) {
     id: event.id,
   };
 }
+
+export function generateSignupPayload(formData, eventId) {
+  if (!eventId) {
+    return {
+      data: { ...formData, isGeneralInterest: true },
+    };
+  } else {
+    return {
+      data: {
+        ...formData,
+        event: {
+          connects: [eventId],
+        },
+      },
+    };
+  }
+}

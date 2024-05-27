@@ -23,6 +23,7 @@ export default async function Page({params}){
             infoText={descriptionMarkdown}
             buttonLabel="Sign Up"
             pricing={pricing}
+            eventId={eventId}
             />
         </main>
     )

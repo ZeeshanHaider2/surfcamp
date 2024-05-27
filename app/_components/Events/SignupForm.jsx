@@ -3,8 +3,9 @@ import TextInput from "../TextInput"
 import { useState } from "react";
 import axios from "axios";
 import { allDataFilledIn } from "@/utils/validation.utils";
+import { generateSignupPayload } from "@/utils/strapi.utils";
 
-const SignupForm = ({headline, infoText, buttonLabel, pricing}) => {
+const SignupForm = ({headline, infoText, buttonLabel, pricing, eventId = null,}) => {
     const [ formData , setFormData] = useState({
     
     firstName: "",
@@ -21,9 +22,8 @@ const [errorMessage, setErrorMessage] = useState(false);
 
     const onSubmit = async(e) => {
         e.preventDefault();
-    const payload = {
-        data: {...formData, isGeneralInterest:true}
- };
+    const payload = generateSignupPayload (formData, eventId);
+
 if (allDataFilledIn(formData)){
   try{
     const response = await axios.post(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/participants`,
