@@ -3,7 +3,7 @@ import SignupForm from "../_components/Events/SignupForm";
 
 export default  async function Page(){
    const allEvents = await fetchAllEvents();
-   console.log(allEvents.length);
+   console.log(allEvents);
     const infoText = (
         <>
         <p className="copy"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
