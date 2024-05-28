@@ -110,7 +110,7 @@ export function generateSignupPayload(formData, eventId) {
   }
 }
 
-export async function fetchAllEvents() {
+export async function fetchAllEvents(eventIdToExclude = null) {
   const query = qs.stringify(
     {
       pagination: {

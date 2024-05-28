@@ -20,7 +20,10 @@ export default async function Page() {
     return(
         <main className="events-page">
             <SignupForm infoText={infoText} headline={headline}/>
-            <FeaturedItems items={allEvents} itemType="event"/>
+            <FeaturedItems 
+             items={allEvents}
+             itemType="event" 
+             headline="Upcoming camps and events"/>
         </main>
     )
 }    
