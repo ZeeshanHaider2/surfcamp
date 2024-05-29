@@ -117,8 +117,8 @@ export async function fetchAllEvents(eventIdToExclude = null) {
         start: 0,
         limit: 12,
       },
-      // sort: ["startingDate:asc"],
-      filter: {
+      //sort: ["startingData:asc"],
+      filters: {
         startingDate: {
           $gt: new Date(),
         },
