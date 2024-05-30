@@ -11,6 +11,7 @@ const BlogPreviewItem = ({article}) => {
             <h5 className="blog-preview__title">{article.headline}</h5>
             <p className="copy-small">{formatDate(article.publishedAt)}</p>
         </Link>
+        
   )
 }
 

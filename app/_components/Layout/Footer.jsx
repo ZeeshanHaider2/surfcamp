@@ -38,7 +38,7 @@ const Footer = () => {
     <ul className="footer__links">
         {navItems.map((item)=>(
            <li key={item.slug}>
-             <Link href={`{item.slug}`}><h5>{item.display}</h5></Link>
+             <Link href={item.slug}><h5>{item.display}</h5></Link>
            </li>
          ))}
     </ul>
