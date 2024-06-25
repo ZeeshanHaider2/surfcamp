@@ -51,7 +51,7 @@ const Footer = () => {
             </li>
           ))}
         </ul>
-        <p className="copy">© Sam’s Surfcamp - all rights reserved</p>
+        <p className="copy">© Zee’s Surfcamp - all rights reserved</p>
       </div>
     </footer>
   )
