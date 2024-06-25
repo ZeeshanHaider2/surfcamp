@@ -11,7 +11,7 @@ const BlogPreview = async() => {
    const articlesToDisplay = [highlightArticle,...recentlyPublishedArticles];
   return (
   <div className="blog-preview">
-    <h2 className="blog-preview__headline">the blog</h2>
+    <h2 className="blog-preview__headline">the blog post</h2>
     <div className="blog-preview__container">
         {articlesToDisplay.map((article) => (
            <BlogPreviewItem key={article.id} article={article}/>
