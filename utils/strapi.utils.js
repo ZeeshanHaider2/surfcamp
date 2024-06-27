@@ -21,7 +21,7 @@ export function processInfoBlocks(data) {
   return infoBlocksRaw.map((infoBlock) => ({
     //console.log(infoBlock.attributes?.image?.data.attributes?.url);
     ...infoBlock.attributes,
-    imageSrc: BASE_URL + infoBlock.attributes?.image?.data?.attributes?.url,
+    imageSrc: infoBlock.attributes?.image?.data?.attributes?.url,
     id: infoBlock.id,
     button: createInfoBlockButton(infoBlock.attributes.button),
   }));
@@ -141,3 +141,5 @@ export async function fetchAllEvents(eventIdToExclude = null) {
   const response = await axios.get(`${BASE_URL}/api/events?${query}`);
   return response.data.data.map((event) => processEventData(event));
 }
+
+//24,64,80,91
