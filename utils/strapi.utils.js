@@ -21,7 +21,7 @@ export function processInfoBlocks(data) {
   return infoBlocksRaw.map((infoBlock) => ({
     //console.log(infoBlock.attributes?.image?.data.attributes?.url);
     ...infoBlock.attributes,
-    imageSrc: BASE_URL + infoBlock.attributes?.image?.data?.attributes?.url,
+    imageSrc: infoBlock.attributes?.image?.data?.attributes?.url,
     id: infoBlock.id,
     button: createInfoBlockButton(infoBlock.attributes.button),
   }));
@@ -60,8 +60,7 @@ function processBlogArticle(article) {
   return {
     ...article.attributes,
     id: article.id,
-    featuredImage:
-      BASE_URL + article.attributes?.featuredImage?.data?.attributes?.url,
+    featuredImage: article.attributes?.featuredImage?.data?.attributes?.url,
   };
 }
 
@@ -77,7 +76,7 @@ export function formatDate(dateString) {
 }
 
 export function extractImageUrl(imageData) {
-  return BASE_URL + imageData.data?.attributes?.url;
+  return imageData.data?.attributes?.url;
 }
 
 export async function fetchIndividualEvent(eventId) {
@@ -88,7 +87,7 @@ export async function fetchIndividualEvent(eventId) {
 function processEventData(event) {
   return {
     ...event.attributes,
-    image: BASE_URL + event.attributes?.image?.data?.attributes?.url,
+    image: event.attributes?.image?.data?.attributes?.url,
     id: event.id,
   };
 }
