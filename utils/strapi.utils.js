@@ -21,7 +21,7 @@ export function processInfoBlocks(data) {
   return infoBlocksRaw.map((infoBlock) => ({
     //console.log(infoBlock.attributes?.image?.data.attributes?.url);
     ...infoBlock.attributes,
-    imageSrc: infoBlock.attributes?.image?.data?.attributes?.url,
+    imageSrc: BASE_URL + infoBlock.attributes?.image?.data?.attributes?.url,
     id: infoBlock.id,
     button: createInfoBlockButton(infoBlock.attributes.button),
   }));
